@@ -2,15 +2,17 @@
   {
     "title": "BoiPoka",
     "category": "Book Discovery App",
+    "categories": ["Web Application"],
     "description": "A book discovery application where users can explore books, save favorites, and track their reading list.",
     "technologies": ["React", "JavaScript", "Tailwind CSS"],
-    "github": "https://github.com/ahasanulhaqueasad/book-vibe.git",
-    "demo": "https://your-boipoka-live-link.vercel.app",
+    "github": "",
+    "demo": "",
     "number": "01"
   },
   {
     "title": "NeedMart",
     "category": "E-commerce Website",
+    "categories": ["E-commerce", "Web Application"],
     "description": "An e-commerce project focused on product discovery and a smooth, responsive shopping experience.",
     "technologies": ["React", "Tailwind CSS", "DaisyUI"],
     "github": "",
@@ -20,10 +22,27 @@
   {
     "title": "DevHub",
     "category": "Developer Community",
+    "categories": ["Web Application"],
     "description": "A platform for developers to learn, share and explore web development resources.",
     "technologies": ["React", "JavaScript", "Tailwind CSS"],
-    "github": "https://github.com/ahasanulhaqueasad",
+    "github": "",
     "demo": "",
     "number": "03"
+  },
+  {
+    "title": "ASAD. Portfolio",
+    "category": "Personal Portfolio Website",
+    "categories": ["Portfolio", "Frontend"],
+    "description": "A modern, responsive personal portfolio website showcasing my skills, projects, and web development services.",
+    "technologies": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React Router"
+    ],
+    "github": "",
+    "demo": "https://ahasanulhaque.vercel.app/",
+    "number": "04"
   }
 ]

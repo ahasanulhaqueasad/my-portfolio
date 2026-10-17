@@ -1,113 +1,150 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { FaCodeBranch, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import ProjectCard from "../components/ProjectCard";
 import projects from "../data/projects.json";
 
+const categories = [
+  "All Projects",
+  "Portfolio",
+  "Landing Page",
+  "E-commerce",
+  "Web Application",
+  "Business Website",
+  "Mobile App",
+  "Other Projects",
+];
+
 function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All Projects");
+
+  const filteredProjects =
+    activeCategory === "All Projects"
+      ? projects
+      : projects.filter((project) =>
+          project.categories?.includes(activeCategory),
+        );
+
   return (
-    <main className="min-h-screen bg-[#080b16] px-6 py-20 text-white md:px-12">
-      <div className="mx-auto max-w-6xl">
-        {/* Page Heading */}
+    <main className="min-h-screen bg-[#080b16] px-4 py-20 text-white sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-14"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            My Recent Work
+          <span className="inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+            <FaCodeBranch />
+            My Portfolio
+          </span>
+
+          <h1 className="mt-6 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+            My{" "}
+            <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
+            Explore my work by project type and discover the websites and
+            applications I have built.
+          </p>
+        </motion.div>
+
+        {/* Category Filters */}
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
+          {categories.map((category) => {
+            const isActive = activeCategory === category;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setActiveCategory(category)}
+                aria-pressed={isActive}
+                className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-2 focus:ring-violet-400 ${
+                  isActive
+                    ? "border-violet-500 bg-violet-600 text-white shadow-lg shadow-violet-950/30"
+                    : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Project Count */}
+        <div className="mb-6 flex items-center justify-between gap-3">
+          <p className="text-sm text-slate-400">
+            Showing{" "}
+            <span className="font-semibold text-violet-300">
+              {activeCategory}
+            </span>
           </p>
 
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <h1 className="text-4xl font-bold md:text-6xl">
-              Featured <span className="text-violet-400">Projects</span>
-            </h1>
+          <p className="text-sm text-slate-400">
+            {filteredProjects.length}{" "}
+            {filteredProjects.length === 1 ? "Project" : "Projects"}
+          </p>
+        </div>
 
-            <p className="max-w-md leading-7 text-slate-400">
-              Explore my projects, the technologies I use, and the practical
-              problems I'm learning to solve through web development.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Project Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6"
-        >
-          <div>
-            <p className="text-sm text-slate-400">Projects in my portfolio</p>
-
-            <p className="mt-1 text-3xl font-bold text-white">
-              {String(projects.length).padStart(2, "0")}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/10 text-lg text-violet-400">
-              <FaCodeBranch />
-            </span>
-
-            <div>
-              <p className="font-semibold text-white">Learning by Building</p>
-              <p className="mt-1 text-sm text-slate-400">
-                Practice, improve, and create
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Project Cards */}
-        {projects.length > 0 ? (
-          <div className="grid gap-7 md:grid-cols-2">
-            {projects.map((project, index) => (
+        {/* Projects Grid */}
+        {filteredProjects.length > 0 ? (
+          <motion.div
+            layout
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {filteredProjects.map((project, index) => (
               <ProjectCard
                 key={project.title}
                 project={project}
                 index={index}
               />
             ))}
-          </div>
+          </motion.div>
         ) : (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-16 text-center">
-            <FaCodeBranch className="mx-auto text-3xl text-violet-400" />
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] px-5 py-16 text-center">
+            <h2 className="text-2xl font-bold">No Projects Found</h2>
 
-            <h2 className="mt-5 text-xl font-bold">Projects Coming Soon</h2>
-
-            <p className="mt-3 text-sm leading-7 text-slate-400">
-              I'm working on projects to showcase here. Please check back soon.
+            <p className="mx-auto mt-3 max-w-md leading-7 text-slate-400">
+              No projects are available in this category yet. Add a project with
+              this type to display it here.
             </p>
+
+            <button
+              type="button"
+              onClick={() => setActiveCategory("All Projects")}
+              className="mt-6 rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white transition hover:bg-violet-500"
+            >
+              View All Projects
+            </button>
           </div>
         )}
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-16 rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-500/10 via-white/[0.02] to-cyan-400/5 p-8 text-center sm:p-10"
-        >
+        {/* Contact CTA */}
+        <div className="mt-16 rounded-3xl border border-white/10 bg-gradient-to-r from-violet-950/40 to-cyan-950/30 p-8 text-center sm:p-12">
           <h2 className="text-2xl font-bold sm:text-3xl">
-            Have a project in mind?
+            Have a Project in Mind?
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl leading-7 text-slate-400">
-            Let's connect and discuss how I can help turn your idea into a
-            useful web experience.
+            Let&apos;s work together to turn your ideas into useful digital
+            experiences.
           </p>
 
           <Link
             to="/contact"
-            className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 px-6 py-3.5 font-semibold text-white transition duration-300 hover:from-violet-500 hover:to-cyan-500"
+            className="mt-7 inline-flex items-center gap-2 rounded-xl bg-violet-600 px-6 py-3 font-semibold text-white transition hover:bg-violet-500"
           >
-            Let's Talk
-            <FaArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
+            Contact Me
+            <FaArrowRight />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </main>
   );
