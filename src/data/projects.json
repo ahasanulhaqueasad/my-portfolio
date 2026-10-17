@@ -44,5 +44,23 @@
     "github": "",
     "demo": "https://ahasanulhaque.vercel.app/",
     "number": "04"
+  },
+  {
+    "title": "FlowPilot",
+    "category": "Project Management Dashboard",
+    "categories": ["Web Application", "Productivity"],
+    "description": "A modern project management dashboard to organize projects, manage tasks, track progress, view calendar schedules, and analyze productivity.",
+    "technologies": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React Router",
+      "Firebase Authentication"
+    ],
+    "github": "",
+    "demo": "https://flow-pilot-landingpage.vercel.app/",
+    "number": "05"
   }
 ]
