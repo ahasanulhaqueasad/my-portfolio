@@ -1,0 +1,29 @@
+[
+  {
+    "title": "BoiPoka",
+    "category": "Book Discovery App",
+    "description": "A book discovery application where users can explore books, save favorites, and track their reading list.",
+    "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "github": "https://github.com/ahasanulhaqueasad/book-vibe.git",
+    "demo": "https://your-boipoka-live-link.vercel.app",
+    "number": "01"
+  },
+  {
+    "title": "NeedMart",
+    "category": "E-commerce Website",
+    "description": "An e-commerce project focused on product discovery and a smooth, responsive shopping experience.",
+    "technologies": ["React", "Tailwind CSS", "DaisyUI"],
+    "github": "",
+    "demo": "",
+    "number": "02"
+  },
+  {
+    "title": "DevHub",
+    "category": "Developer Community",
+    "description": "A platform for developers to learn, share and explore web development resources.",
+    "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "github": "https://github.com/ahasanulhaqueasad",
+    "demo": "",
+    "number": "03"
+  }
+]
