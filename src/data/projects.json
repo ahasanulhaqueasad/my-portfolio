@@ -79,5 +79,22 @@
     "github": "",
     "demo": "https://elora-restaurant.vercel.app/",
     "number": "06"
+  },
+  {
+    "title": "ASAD. Personal Portfolio",
+    "category": "Personal Portfolio Website",
+    "categories": ["Portfolio", "Frontend"],
+    "description": "A modern, responsive personal portfolio landing page showcasing my skills, projects, technologies, and web development journey with a clean and interactive user interface.",
+    "technologies": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React Router"
+    ],
+    "github": "",
+    "demo": "https://portfolio-project-tawny-five.vercel.app/",
+    "number": "07"
   }
 ]
