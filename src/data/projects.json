@@ -62,5 +62,22 @@
     "github": "",
     "demo": "https://flow-pilot-landingpage.vercel.app/",
     "number": "05"
+  },
+  {
+    "title": "ÉLORA Fine Dining",
+    "category": "Restaurant Website",
+    "categories": ["Web Application", "Frontend"],
+    "description": "A modern, responsive restaurant website featuring an elegant UI, interactive food menu, restaurant story, image gallery, testimonials, and table reservation form.",
+    "technologies": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "React Router",
+      "Motion"
+    ],
+    "github": "",
+    "demo": "https://elora-restaurant.vercel.app/",
+    "number": "06"
   }
 ]
