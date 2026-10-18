@@ -5,6 +5,7 @@
     "categories": ["Web Application"],
     "description": "A book discovery application where users can explore books, save favorites, and track their reading list.",
     "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "image": "/images/boipoka.png",
     "github": "",
     "demo": "",
     "number": "01"
@@ -15,6 +16,7 @@
     "categories": ["E-commerce", "Web Application"],
     "description": "An e-commerce project focused on product discovery and a smooth, responsive shopping experience.",
     "technologies": ["React", "Tailwind CSS", "DaisyUI"],
+    "image": "/images/needmart.png",
     "github": "",
     "demo": "",
     "number": "02"
@@ -25,6 +27,7 @@
     "categories": ["Web Application"],
     "description": "A platform for developers to learn, share and explore web development resources.",
     "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "image": "/images/devhub.png",
     "github": "",
     "demo": "",
     "number": "03"
@@ -41,6 +44,7 @@
       "DaisyUI",
       "React Router"
     ],
+    "image": "/images/asad-portfolio.png",
     "github": "",
     "demo": "https://ahasanulhaque.vercel.app/",
     "number": "04"
@@ -59,6 +63,7 @@
       "React Router",
       "Firebase Authentication"
     ],
+    "image": "/images/flowpilot.png",
     "github": "",
     "demo": "https://flow-pilot-landingpage.vercel.app/",
     "number": "05"
@@ -76,6 +81,7 @@
       "React Router",
       "Motion"
     ],
+    "image": "/images/elora.png",
     "github": "",
     "demo": "https://elora-restaurant.vercel.app/",
     "number": "06"
@@ -93,6 +99,7 @@
       "DaisyUI",
       "React Router"
     ],
+    "image": "/images/mark-adam-portfolio.png",
     "github": "",
     "demo": "https://portfolio-project-tawny-five.vercel.app/",
     "number": "07"
